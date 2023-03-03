@@ -1,8 +1,10 @@
+import { Entypo } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React, { FC } from "react";
 import { FlatList, Image, Pressable, Text, View } from "react-native";
 import Animated from "react-native-reanimated";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Colors } from "../../constants/color";
 import { styles } from "./style";
 
 const FAKE_LIST = [
@@ -58,7 +60,34 @@ export const MusicLibrary = () => {
           renderItem={({ item, index }) => <SongItem index={index} />}
         />
       </View>
+      <MusicPlayer />
     </SafeAreaView>
+  );
+};
+
+const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
+const AnimatedEntypo = Animated.createAnimatedComponent(Entypo);
+const MusicPlayer = () => {
+  const navigation = useNavigation();
+  return (
+    <AnimatedPressable
+      sharedTransitionTag="player-container"
+      style={styles.playerContainer}
+      onPress={() => navigation.navigate("MusicPlayer")}
+    >
+      <Animated.Image
+        sharedTransitionTag="player-image"
+        style={styles.playerImage}
+        source={require("../../assets/images/fake-album.jpeg")}
+      />
+
+      <AnimatedEntypo
+        sharedTransitionTag="player-play"
+        name="controller-play"
+        size={45}
+        color={Colors.redVelvat}
+      />
+    </AnimatedPressable>
   );
 };
 

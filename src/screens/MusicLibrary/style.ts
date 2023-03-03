@@ -71,4 +71,26 @@ export const styles = StyleSheet.create({
     marginTop: 2,
     color: Colors.redVelvat,
   },
+
+  playerContainer: {
+    flexDirection: "row",
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    paddingBottom: 25,
+    borderTopWidth: 1,
+    borderTopColor: "#dedede",
+    position: "absolute",
+    bottom: 20,
+    left: 20,
+    width: width,
+    backgroundColor: Colors.background,
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  playerImage: {
+    width: 60,
+    height: 60,
+    backgroundColor: Colors.primary,
+    borderRadius: 5,
+  },
 });
