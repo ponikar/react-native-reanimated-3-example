@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "reanimated",
+    "slug": "reanimated",
+    "version": "1.0.0",
+    "sdkVersion": "47.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "android": {
+      "package": "com.iponikar.reanimated"
+    },
+    "ios": {
+      "bundleIdentifier": "com.iponikar.reanimated"
+    }
+  }
+}
